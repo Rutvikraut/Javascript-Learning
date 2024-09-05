@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Events</title>
+</head>
+<body>
+    <ul id="buttons">
+        <li id="One"><button>Button One</button></li>
+        <li id="Two"><button>Button Two</button></li>
+        <li id="Three"><button>Button Three</button></li>
+    </ul>
+</body>
+
+<Script>
+    // Event Bubbling
+    // 1) Parent
+    document.querySelector("#buttons").addEventListener('click',(e)=>{
+        console.log("UL Clicked")
+    },true) // true makes event capturing i.e from parent to child propagation
+
+    // 2) Child
+    document.querySelector("#Two").addEventListener('click',(e)=>{
+        console.log("Two Clicked")
+        // e.stopPropagation() // Stops propagation and only listen its event
+    },true)
+
+    // Event Propagation
+    // 1) Event Bubbling = When inner child is clicked then it propagates thorugh child to parent i.e If Parent and child both having event listeners then first child listens the event then parent
+    // 2) Event Capturing = Opposite of Event Bubbling. If Parent and child both having event listeners then first parent listen the event and then child
+    // -- To implement Event capturing add third parameter of addEventListener True
+
+    // To stop event propagation - e.stoppropagation() - is used
+
+
+    //Deleting button on events
+
+    document.querySelector('#buttons').addEventListener('click',(e)=>{
+        if(e.target.tagName=="BUTTON"){
+            let removeIt=e.target.parentNode
+            // removeIt.remove()
+            removeIt.parentNode.removeChild(removeIt) // Go to parent and remove its child
+        }
+    })
+</Script>
+</html>
