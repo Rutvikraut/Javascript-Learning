@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #313131; color: #fff; font-weight: bold;">
+    <ul class="languages">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    const languageDiv=document.querySelector('.languages')
+    languageDiv.style.listStyle='numbered'
+    function addListItem(itemName){
+        const ListItem=document.createElement('li')
+        ListItem.innerHTML=`${itemName}`
+        languageDiv.appendChild(ListItem)
+    }
+    addListItem('Ruby')
+    addListItem('Python')
+    addListItem('C++')
+    addListItem('Golang')
+
+    function addOptimizedLang(langName){
+        const ListItem=document.createElement('li')
+        ListItem.appendChild(document.createTextNode(langName))
+        languageDiv.appendChild(ListItem)
+    }
+    addOptimizedLang('Swift')
+
+    //Edit
+
+    const secondLang=document.querySelector('li:nth-child(2)')
+    console.log(secondLang)
+    const newli=document.createElement('li')
+    newli.textContent='Mojo'
+    secondLang.replaceWith(newli)
+    console.log(newli)
+
+    const firstlang=document.querySelector('li:first-child')
+    firstlang.outerHTML='<li>Typescript</li>'
+
+    //remove
+
+    const lastlang=document.querySelector('li:last-child')
+    console.log(lastlang)
+    lastlang.remove()
+</script>
+</html>
