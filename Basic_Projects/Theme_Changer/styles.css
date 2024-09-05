@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+h1{
+    margin-bottom: 50px;
+}
+.button{
+    border: .1px solid black;
+    padding: 40px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+#grey{
+    background-color: grey;
+}
+#black{
+    background-color: black;
+}
+#yellow{
+    background-color: yellow;
+}
+#blue{
+    background-color: blue;
+}
