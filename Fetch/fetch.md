@@ -6,7 +6,7 @@ fetch() promise only rejects when network error is encountered **(usually when t
 
 fetch() promise does not reject on HTTP errors(404, etc.). Instead then() handler must check the Response.ok and Response.status properties
 
-## Using Try Catch
+## Using Try Catch Block
 
 ```Javascript
 async function getUserData(){
